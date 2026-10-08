@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Garant.kg</title>
+  <script>
+    // SPA redirect trick для GitHub Pages
+    // Преобразует /GarantKG/listings → /GarantKG/?p=/listings
+    // чтобы index.html подхватил маршрут
+    var segmentCount = 1; // кол-во сегментов в base (GarantKG = 1)
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+      l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body></body>
+</html>
