@@ -24,7 +24,7 @@ function Badge({ kind }: { kind: string }) {
 }
 
 export default function ListingsPage() {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const [search, setSearch] = useState(searchParams.get('search') || '')
   const [kind, setKind] = useState(searchParams.get('kind') || 'all')
   const [category, setCategory] = useState(searchParams.get('category') || 'Все категории')

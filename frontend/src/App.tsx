@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+
+// На GitHub Pages сайт живёт по /GarantKG/, поэтому basename нужен
+const basename = import.meta.env.VITE_BASE_URL || '/GarantKG/'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
@@ -23,7 +26,7 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           {/* Страницы без шапки/подвала */}
           <Route path="/login" element={<LoginPage />} />

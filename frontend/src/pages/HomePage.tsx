@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   Shield, Search, Briefcase, CheckCircle, Star,
   ArrowRight, Users, TrendingUp, Clock, Wrench,
-  Monitor, Home, Truck, GraduationCap, Camera,
+  Monitor, Truck, GraduationCap, Camera,
   Zap, Droplets, Brush, ChevronRight
 } from 'lucide-react'
 
