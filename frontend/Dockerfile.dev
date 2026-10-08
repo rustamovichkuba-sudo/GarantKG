@@ -1,0 +1,16 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Установка зависимостей
+COPY package*.json ./
+RUN npm install
+
+# Копирование проекта
+COPY . .
+
+# Порт dev-сервера
+EXPOSE 3000
+
+# Запуск dev-сервера
+CMD ["npm", "run", "dev", "--", "--host"]

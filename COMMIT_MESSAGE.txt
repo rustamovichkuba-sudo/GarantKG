@@ -1,0 +1,46 @@
+feat: complete Stage 0 - project foundation
+
+🎉 Этап 0 завершён: Полный каркас проекта Garant.kg
+
+## Backend (Django + DRF)
+- ✅ Django 5 с полной настройкой (PostgreSQL, Redis, Celery)
+- ✅ 13 Django-приложений (accounts, profiles, marketplace, deals, payments, messaging, files, disputes, reviews, notifications, moderation, audit, common)
+- ✅ Модель User с телефоном как primary identifier
+- ✅ JWT аутентификация (SimpleJWT)
+- ✅ OpenAPI документация (drf-spectacular)
+- ✅ Health check endpoint
+- ✅ Кастомная обработка исключений
+- ✅ Базовые миксины и permissions
+- ✅ Argon2 для паролей
+- ✅ Django Axes для защиты от брутфорса
+- ✅ Rate limiting
+- ✅ Pytest конфигурация
+
+## Frontend (React + TypeScript)
+- ✅ React 18 + TypeScript + Vite
+- ✅ TanStack Query для серверного состояния
+- ✅ Tailwind CSS (mobile-first)
+- ✅ React Router, Axios, React Hook Form + Zod
+- ✅ Базовая структура с заглушкой
+
+## Инфраструктура
+- ✅ Docker Compose (6 сервисов: db, redis, backend, celery, celery-beat, frontend)
+- ✅ Healthchecks для всех сервисов
+- ✅ Pre-commit hooks (ruff, prettier)
+- ✅ .env.example с полной конфигурацией
+
+## Документация
+- ✅ README.md — описание проекта
+- ✅ QUICKSTART.md — запуск за 3 минуты
+- ✅ CHECKLIST.md — чек-лист проверки
+- ✅ docs/DECISIONS.md — архитектурные решения
+- ✅ docs/PROGRESS.md — план развития
+- ✅ docs/STAGE_0_COMPLETE.md — детали этапа
+- ✅ docs/DOCKER_SETUP.md — установка Docker
+- ✅ docs/STAGE_0_SUMMARY.md — итоговый отчёт
+
+## Готовность
+Проект полностью готов к запуску после установки Docker Desktop.
+См. QUICKSTART.md для инструкций.
+
+Следующий этап: Аутентификация и профили
