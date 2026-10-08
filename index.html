@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/GarantKG/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Garant.kg — платформа безопасных сделок для Кыргызстана" />
+    <title>Garant.kg — Безопасные сделки</title>
+    <script>
+      // Восстанавливаем путь из ?p= после редиректа 404.html
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+        // Обрабатываем ?p= параметр от 404.html
+        var search = window.location.search;
+        if (search.indexOf('?p=/') === 0 || search.indexOf('&p=/') !== -1) {
+          var params = search.slice(1).split('&');
+          var path = '';
+          var query = [];
+          for (var i = 0; i < params.length; i++) {
+            if (params[i].indexOf('p=/') === 0) {
+              path = '/' + params[i].slice(3).replace(/~and~/g, '&');
+            } else if (params[i].indexOf('q=') === 0) {
+              query.push(params[i].slice(2).replace(/~and~/g, '&'));
+            }
+          }
+          if (path) {
+            window.history.replaceState(null, null,
+              window.location.pathname.split('/').slice(0, 2).join('/') + path +
+              (query.length ? '?' + query.join('&') : '') +
+              window.location.hash
+            );
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/GarantKG/assets/index-8OH3h39P.js"></script>
+    <link rel="stylesheet" crossorigin href="/GarantKG/assets/index-D2e3k2Ce.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
